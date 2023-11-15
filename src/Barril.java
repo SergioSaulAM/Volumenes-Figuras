@@ -4,6 +4,7 @@ public class Barril extends Figura{
 
     @Override
     public float volumen() throws IOException {
+        double temp = 0, temp2 = 0;
         main obj_main = new main();
 
         System.out.print("Radio: ");
@@ -15,6 +16,12 @@ public class Barril extends Figura{
         System.out.print("Grosor: ");
         float grosor = obj_main.leer(0);
 
-        return (float) ((Math.PI * radio * radio * altura) * (1 - Math.cos(grosor / radio)));
+        temp = radio * radio;
+        temp *= Math.PI;
+        temp *= altura;
+        temp2 = grosor / radio;
+        temp *= 1 - Math.cos(temp2);
+
+        return (float) temp;
     }
 }

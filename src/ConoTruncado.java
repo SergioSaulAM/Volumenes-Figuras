@@ -6,6 +6,7 @@ public class ConoTruncado extends Figura{
 
     @Override
     public float volumen() throws IOException {
+        double temp, temp2, temp3;
         main obj_main = new main();
 
         System.out.print("Radio Superior: ");
@@ -14,9 +15,19 @@ public class ConoTruncado extends Figura{
         System.out.print("Radio Interior: ");
         float radioInferior = obj_main.leer(0);
 
-        System.out.println("Altura: ");
+        System.out.print("Altura: ");
         float altura = obj_main.leer(0);
 
-        return (float) ((1.0 / 3) * Math.PI * (radioSuperior * radioSuperior + radioSuperior * radioInferior + radioInferior * radioInferior) * altura);
+        temp = radioSuperior * radioSuperior;
+        temp2 = radioSuperior * radioInferior;
+        temp3 = radioInferior * radioInferior;
+
+        temp += temp2;
+        temp += temp3;
+        temp *= altura;
+        temp *= Math.PI;
+        temp *= 1.0 / 3;
+
+        return (float) temp;
     }
 }

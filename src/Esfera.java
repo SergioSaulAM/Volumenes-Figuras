@@ -5,11 +5,18 @@ public class Esfera extends Figura{
 
     @Override
     public float volumen() throws IOException {
+        double temp;
         main obj_main = new main();
 
         System.out.print("Radio: ");
         float radio = obj_main.leer(0);
 
-        return (float) ((4.0 / 3) * Math.PI * radio * radio * radio);
+        temp = 4.0 / 3;
+        temp *= Math.PI;
+        temp *= radio;
+        temp *= radio;
+        temp *= radio;
+
+        return (float) temp;
     }
 }

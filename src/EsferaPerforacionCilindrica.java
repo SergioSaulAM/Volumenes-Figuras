@@ -5,6 +5,7 @@ public class EsferaPerforacionCilindrica extends Figura{
 
     @Override
     public float volumen() throws IOException {
+        double temp, temp2;
         main obj_main = new main();
 
         System.out.print("Radio de Esfera con Perforación: ");
@@ -16,6 +17,16 @@ public class EsferaPerforacionCilindrica extends Figura{
         System.out.print("Altura de Cilindro de Perforación: ");
         float alturaCilindroPerforacion = obj_main.leer(0);
 
-        return (float) ((4.0 / 3) * Math.PI * radioEsferaPerforacion * radioEsferaPerforacion * radioEsferaPerforacion - Math.PI * radioCilindroPerforacion * radioCilindroPerforacion * alturaCilindroPerforacion);
+        temp = 4.0 / 3;
+        temp *= Math.PI;
+        temp *= radioEsferaPerforacion;
+        temp *= radioEsferaPerforacion;
+        temp *= radioEsferaPerforacion;
+        temp2 = Math.PI * radioCilindroPerforacion;
+        temp2 *= radioCilindroPerforacion;
+        temp2 *= alturaCilindroPerforacion;
+        temp -= temp2;
+
+        return (float) temp;
     }
 }

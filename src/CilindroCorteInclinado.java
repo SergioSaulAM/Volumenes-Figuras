@@ -4,6 +4,7 @@ public class CilindroCorteInclinado extends Figura {
 
     @Override
     public float volumen() throws IOException {
+        double temp;
         main obj_main = new main();
 
         System.out.print("Radio Cilindro Corte Inclinado: ");
@@ -15,6 +16,11 @@ public class CilindroCorteInclinado extends Figura {
         System.out.print("Ángulo de Corte Inclinado: ");
         float angulo = obj_main.leer(0);
 
-        return (float) ((Math.PI * radio * radio * altura) * (1 - Math.cos(angulo)));
+        temp = radio * radio;
+        temp *= Math.PI;
+        temp *= altura;
+        temp *= 1 - Math.cos(angulo);
+
+        return (float) temp;
     }
 }

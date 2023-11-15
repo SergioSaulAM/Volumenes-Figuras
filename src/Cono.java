@@ -4,6 +4,7 @@ public class Cono extends Figura{
     public Cono() {}
 
     public float volumen() throws IOException {
+        double temp;
         main obj_main = new main();
 
         System.out.print("Altura: ");
@@ -12,6 +13,12 @@ public class Cono extends Figura{
         System.out.print("Radio: ");
         float radio = obj_main.leer(0);
 
-        return (float) ((1.0 / 3) * Math.PI * radio * radio * altura);
+        temp = 1.0 / 3;
+        temp *= Math.PI;
+        temp *= radio;
+        temp *= radio;
+        temp *= altura;
+
+        return (float) temp;
     }
 }

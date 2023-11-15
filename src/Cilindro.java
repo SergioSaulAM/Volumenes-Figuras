@@ -5,6 +5,7 @@ public class Cilindro extends Figura{
 
     @Override
     public float volumen() throws IOException {
+        double temp;
         main obj_main = new main();
 
         System.out.print("Altura: ");
@@ -12,6 +13,10 @@ public class Cilindro extends Figura{
         System.out.print("Radio: ");
         float radio= obj_main.leer(0);
 
-        return (float) (Math.PI * radio * radio * altura);
+        temp = Math.PI * radio;
+        temp *= radio;
+        temp *= altura;
+
+        return (float) temp;
     }
 }
