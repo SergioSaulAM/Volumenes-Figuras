@@ -1,3 +1,5 @@
+
+
 import java.io.*;
 
 public class EsferaPerforacionConica extends Figura{
@@ -5,7 +7,8 @@ public class EsferaPerforacionConica extends Figura{
 
     @Override
     public float volumen() throws IOException {
-        main obj_main = new main();
+    	double temp=0, temp2=0, temp3=0;
+    	main obj_main = new main();
 
         System.out.print("Radio de esfera con perforación: ");
         float radio = obj_main.leer(0);
@@ -21,9 +24,25 @@ public class EsferaPerforacionConica extends Figura{
 
         System.out.print("Altura de cono de perforacion 2: ");
         float alturaCono2 = obj_main.leer(0);
+        
+        temp = 4.0/3;
+        temp *= Math.PI;
+        temp *= radio;
+        temp *= radio;
+        temp *= radio;
+        temp2 = 1.0/3;
+        temp2 *= Math.PI;
+        temp2 *= radioCono1;
+        temp2 *= radioCono1;
+        temp2 *= radioCono1;
+        temp3 = 1.0/3;
+        temp3 *= Math.PI;
+        temp3 *= radioCono2;
+        temp3 *= radioCono2;
+        temp3 *= radioCono2;
+        temp = temp -temp2;
+        temp = temp -temp3;
 
-        return (float) ((4.0 / 3) * Math.PI * radio * radio * radio
-                - (1.0 / 3) * Math.PI * radioCono1 * radioCono1 * alturaCono1
-                - (1.0 / 3) * Math.PI * radioCono2 * radioCono2 * alturaCono2);
+        return (float) temp;
     }
 }

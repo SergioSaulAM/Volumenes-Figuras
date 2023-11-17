@@ -1,3 +1,4 @@
+
 import java.io.*;
 import java.math.*;
 
@@ -6,6 +7,7 @@ public class PiramideTruncada extends Figura{
 
     @Override
     public float volumen() throws IOException {
+    	double temp=0, temp2=0, temp3=0;
         main obj_main = new main();
 
         System.out.print("Longitud 1: ");
@@ -20,9 +22,17 @@ public class PiramideTruncada extends Figura{
 
         System.out.print("Altura: ");
         float Altura = obj_main.leer(0);
+        
+        temp = longitud*Ancho;
+        temp2 = longitud*Ancho2;
+        temp = temp + temp2;
+        temp3 = temp;
+        temp = Math.sqrt(temp);
+        
+        temp2=Altura/3;
+        temp3=temp3+temp;
+        temp =temp2*temp3;
 
-        float g = (float) Math.sqrt((longitud*Ancho)+(longitud2*Ancho2));
-
-        return (float) (Altura/3)*((longitud*Ancho)+(longitud2*Ancho2)+g);
+        return (float) temp;
     }
 }

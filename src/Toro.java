@@ -1,3 +1,4 @@
+
 import java.io.*;
 
 public class Toro extends Figura{
@@ -5,6 +6,7 @@ public class Toro extends Figura{
 
     @Override
     public float volumen() throws IOException {
+    	double temp=0, temp2=0;
         main obj_main = new main();
 
         System.out.print("Radio mayor: ");
@@ -12,7 +14,14 @@ public class Toro extends Figura{
 
         System.out.print("Radio menor: ");
         float radioMenor = obj_main.leer(0);
+        
+        temp = 2.0/3;
+        temp *= Math.PI;
+        temp *= radioMayor;
+        temp *= radioMenor;
+        temp2 = radioMayor + radioMenor;
+        temp = temp * temp2;
 
-        return (float) ((2.0 / 3) * Math.PI * radioMayor * radioMenor * (radioMayor + radioMenor));
+        return (float) temp;
     }
 }

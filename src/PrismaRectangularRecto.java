@@ -1,3 +1,4 @@
+
 import java.io.*;
 import java.math.*;
 
@@ -6,6 +7,7 @@ public class PrismaRectangularRecto extends Figura{
 
     @Override
     public float volumen() throws IOException {
+    	double temp=0;
         main obj_main = new main();
 
         System.out.print("Lado: ");
@@ -16,7 +18,11 @@ public class PrismaRectangularRecto extends Figura{
 
         System.out.print("Altura: ");
         float altura = obj_main.leer(0);
+        
+        temp = lado * ancho;
+        temp *=altura;
 
-        return (float)  lado * ancho * altura;
+        return (float)  temp;
+        
     }
 }

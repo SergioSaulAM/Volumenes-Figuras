@@ -1,3 +1,4 @@
+
 import java.io.*;
 
 public class SegmentoEsfericoTruncado extends Figura{
@@ -5,6 +6,7 @@ public class SegmentoEsfericoTruncado extends Figura{
 
     @Override
     public float volumen() throws IOException {
+    	double temp=0, temp2=0, temp3=0;
         main obj_main = new main();
 
         System.out.print("Radio Superior: ");
@@ -15,7 +17,17 @@ public class SegmentoEsfericoTruncado extends Figura{
 
         System.out.print("Altura del Segmento: ");
         float altura_segmento = obj_main.leer(0);
+        
+        temp = 1.0/3;
+        temp *= Math.PI;
+        temp2 = radio_superior*radio_superior;
+        temp3 = radio_superior*radio_interior;
+        temp2= temp2 + temp3;
+        temp3 = radio_interior * radio_interior;
+        temp2= temp2 + temp3;
+        temp = temp * temp2;
+        temp *= altura_segmento;
 
-        return (float) ((1.0 / 3) * Math.PI * (radio_superior * radio_superior + radio_superior * radio_interior + radio_interior * radio_interior) * altura_segmento);
+        return (float) temp;
     }
 }

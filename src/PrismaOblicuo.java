@@ -1,3 +1,4 @@
+
 import java.io.*;
 import java.math.*;
 
@@ -6,6 +7,7 @@ public class PrismaOblicuo extends Figura{
 
     @Override
     public float volumen() throws IOException {
+    	double temp=0, temp2=0;
         main obj_main = new main();
 
         System.out.print("Longitud 1: ");
@@ -20,7 +22,13 @@ public class PrismaOblicuo extends Figura{
 
         System.out.print("Altura: ");
         double altura = obj_main.leer(0);
+        
+        temp = base1*ancho1;
+        temp2 = base2*ancho2;
+        temp = temp + temp2;
+        temp *=altura;
+        temp /=2;
 
-        return (float)  ((base1 * ancho1 + base2 * ancho2) * altura / 2);
+        return (float)  temp;
     }
 }

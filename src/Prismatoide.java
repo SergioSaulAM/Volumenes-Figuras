@@ -1,9 +1,12 @@
+
+
 import java.io.*;
 public class Prismatoide extends Figura {
     public Prismatoide() {}
 
     @Override
     public float volumen() throws IOException {
+    	double temp = 0;
         main obj_main = new main();
 
         System.out.print("Número de lados: ");
@@ -22,7 +25,9 @@ public class Prismatoide extends Figura {
 
         System.out.print("Áltura del barril: ");
         float altura = obj_main.leer(0);
+        
+        temp=areaBase * altura;
 
-        return areaBase * altura;
+        return (float) temp;
     }
 }
